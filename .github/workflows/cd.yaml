@@ -43,11 +43,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-
-
-      - name: Commit e Push
-        env:
-          ACTION_TOKEN: ${{ secrets.ACTION_TOKEN }}
-        run: |
           git commit -am "change image tag"
-          ad-m/github-push-action@master
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACTION_TOKEN }}
