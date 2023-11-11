@@ -1,7 +1,9 @@
 name: CD
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
   build:
     name: Build
@@ -40,10 +42,11 @@ jobs:
       - name: commit
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "Deploy Action"
+          git config --local user.name "GitHub Action"
           git commit -am "change image tag"
-    
-      - name: Executar ação com o token
+
+
+      - name: Commit e Push
         env:
           ACTION_TOKEN: ${{ secrets.ACTION_TOKEN }}
         run: |
