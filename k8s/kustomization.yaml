@@ -9,4 +9,4 @@ namespace: goapp
 images:
 - name: goapp
   newName: israeldoamaral/argocd-golang
-  newTag: 085d36eaf0209bc3ca82bb133c95801487063890
+  newTag: da86be5bbf8a791752879545fc3cd02c673f77ef
